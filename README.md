@@ -1,4 +1,4 @@
-# Gaussian_Mixture
+# Gaussian Mixture
 Gaussian_Mixture from scratch in Python using EM algorithm    
 
 1. Randomly assign responsibility values for each item
