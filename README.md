@@ -1,5 +1,5 @@
 # Gaussian Mixture
-Gaussian_Mixture from scratch in Python using EM algorithm    
+GaussianMixture from scratch in Python using EM algorithm    
 
 1. Randomly assign responsibility values to each item
 2. Compute Gaussian params like means and etc
