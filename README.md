@@ -15,8 +15,8 @@ graph TD
     InitialEStep[Initial E-step on given responsibilities and X] --> Guard
     Guard -- Yes --> Return[Stop fitting]
     Guard{Is the change under tolerance value OR Is the max iteration reached} -- No --> EStep
-    EStep --> MStep
-    MStep --> Guard
+    EStep[E-steo] --> MStep
+    MStep[M-step] --> Guard
     Return --> End([Ready to predict])
 ```
 
