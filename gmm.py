@@ -48,7 +48,7 @@ class GaussianMixture(object):
             prob = multivariate_normal(mean=mu, cov=sigma).pdf(x)
             resp[:, k] = prob * weight
 
-        # Normalization
+        # normalization
         resp /= resp.sum(axis=1)[:, np.newaxis]
         return resp
 
@@ -70,7 +70,7 @@ class GaussianMixture(object):
             # M step, to evaluate params
             self.weights_, self.means_, self.covars_ = self._m_step(x, resp)
             
-            # Compute average resp
+            # compute average resp
             lower_bound = self._compute_lower_bound(resp)
             change = np.abs(lower_bound - prev_lower_bound)
             if self.verbose: 
@@ -80,7 +80,7 @@ class GaussianMixture(object):
             if change < self.tol: break
             prev_lower_bound = lower_bound
 
-            # Check iterations
+            # check iterations
             iter += 1
             if iter >= self.max_iter: break
 
@@ -109,13 +109,13 @@ if __name__ == '__main__':
     part2 = samples[breakpoint:]
 
 
-    # Fit a GMM with two components
+    # fit a GMM with two components
     clf = GaussianMixture(n_components=2, max_iter=5000, verbose=True)
     clf.fit(samples)
 
     pred = clf.predict(samples)
 
-    # Plot
+    # plot
     pred_part1 = samples[pred == 0]
     pred_part2 = samples[pred == 1]
 
@@ -129,7 +129,7 @@ if __name__ == '__main__':
 
     plt.show()
 
-    # Params
+    # show params
     print("Means:\n", clf.means_)
     print("Weights:\n", clf.weights_)
     print("Covs:\n", clf.covars_)
