@@ -14,7 +14,7 @@ graph TD
     InitializeResp[Initialize responsibilities in N_samples x N_components] --> InitialEStep
     InitialEStep[Initial E-step on given responsibilities and X] --> Guard
     Guard -- Yes --> Return[Stop fitting]
-    Guard{Is the change beyond tolerance value OR Is the max iteration reached} -- No --> EStep
+    Guard{{Is the change beyond tolerance value OR Is the max iteration reached}} -- No --> EStep
     EStep[E-step] --> MStep
     MStep[M-step] --> Guard
     Return --> End([Ready to predict])
